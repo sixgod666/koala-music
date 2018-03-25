@@ -13,6 +13,18 @@
         line-height 44px
         color $color-theme
         text-align center
+        .logo {
+            display inline-block
+            vertical-align middle
+            width 30px
+            height 32px
+            bg-image(logo)
+            background-size 30px 32px
+        }
+        .text {
+            display inline-block
+            font-size $font-size-large
+        }
     }
 </style>
 <script>

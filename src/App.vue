@@ -1,13 +1,23 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <k-header></k-header>
+        <tab></tab>
+        <keep-alive>
+            <router-view/>
+        </keep-alive>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+    import kHeader from 'components/k-header/k-header'
+    import tab from 'components/tab/tab'
+    export default {
+        name: 'App',
+        components: {
+            kHeader,
+            tab
+        }
+    }
 </script>
 
 <style>
