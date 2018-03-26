@@ -38,7 +38,6 @@
             }
         },
         created(){
-            console.info('created')
             let self = this
             window.addEventListener('resize', function(){
                 self.refreshSlider()
@@ -49,7 +48,7 @@
         },
         beforeRouteEnter(to, from, next) {
             next(vm => {
-                vm.sliderToNext(true)
+                vm.refreshSlider(true)
             })
         },
         methods: {
