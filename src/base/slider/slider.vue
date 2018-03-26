@@ -59,6 +59,7 @@
                 }
             },
             refresh(flag) {
+                flag && (this.currentIndex = 0)
                 this.slider && this.slider[0].refresh(flag)
             },
             next() {
