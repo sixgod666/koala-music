@@ -1,11 +1,14 @@
 <template>
-    <div class="singer">singer</div>
+    <div class="singer">
+        <itemlist :items="singers"></itemlist>
+    </div>
 </template>
 
 <script>
     import getSingerList from 'api/singer'
     import {ERR_OK} from '../../api/config'
     import Singer from 'common/js/singer'
+    import itemlist from 'base/itemlist/itemlist'
     const HOT_LENGTH = 10
     const HOT_TITLE = '热门'
     export default {
@@ -23,7 +26,6 @@
                 getSingerList().then((data) => {
                     if(data.code === ERR_OK) {
                         this.singers = this.groupByIndex(data.data.list)
-                        console.info(this.singers)
                     }
                 })
             },
@@ -51,7 +53,12 @@
                     special.push(map[key])
                 }
                 return [hot].concat(group.sort((a, b) => a.title.charCodeAt(0) - b.title.charCodeAt(0))).concat(special)
+            },
+            touchMove(currentY) {
             }
+        },
+        components: {
+            itemlist
         }
     }
 </script>

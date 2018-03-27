@@ -34,12 +34,13 @@
                         simulationScrollY({
                             unidirectional: true,
                             scrollBar: false,
-                            onTouchMove() {
+                            onTouchMove(currentY) {
                                 let event = document.createEvent('HTMLEvents')
 
                                 event.initEvent('scroll', true, true)
 
                                 self.$refs.container.dispatchEvent(event)
+                                self.$emit('touchMove', currentY)
                             },
                             onTransMove() {
                                 let event = document.createEvent('HTMLEvents')
